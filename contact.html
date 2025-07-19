@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQ Clash - Contact</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+   <nav>
+  <div class="logo">IQ Clash</div>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+ <div class="lang-segment">
+  <button id="lang-fr" class="lang-btn">FR</button>
+  <button id="lang-en" class="lang-btn">EN</button>
+</div>
+  </ul>
+</nav>
+
+    <section class="contact">
+        <h1 data-translate>Contact Us</h1>
+        <form id="contact-form" action="https://formspree.io/f/xkgzoogl" method="POST">
+            <label for="name" data-translate>Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email" data-translate>Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message" data-translate>Message</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit" data-translate>Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="socials">
+            <a href="https://facebook.com/richardlegeek" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://x.com/rizinkovic" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://github.com/rizinkovic" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <p data-translate>Disclaimer: This app is for educational purposes only. © 2025 IQ Clash</p>
+    </footer>
+
+    <script src="js/translate.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

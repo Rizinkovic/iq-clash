@@ -38,7 +38,7 @@ function loadQuestion() {
       Your Score: <span style="color:${scoreColor}; font-weight:bold;">${score}/50</span> - ${result}<br>
       <p>Share your result: <span class="share-link-text">${link}</span></p>
       <button class="btn-outline copy-btn">Copy Link</button><br>
-      <a href="quiz.html" class="btn-outline return-btn">Return to Subject Selection</a>
+      <a href="../level.html" class="btn-outline return-btn">Return to Subject Selection</a>
     `;
 
     document.getElementById('question').innerText = '';
@@ -88,8 +88,9 @@ function checkAnswer(opt) {
     document.getElementById('result').innerHTML = '<span style="color: green;">YOU GOT THE CORRECT ANSWER</span>';
   } else {
     document.getElementById('result').innerHTML = '<span style="color: red;">YOU HAVE FAILED</span>';
+    alert(`Incorrect! The correct answer is: ${qData[current].answer}`);
   }
-  setTimeout(nextQuestion, 1000); // Advance to next question after 1 second
+  setTimeout(nextQuestion, 1500); // Advance to next question after 1 second
 }
 
 function nextQuestion() {

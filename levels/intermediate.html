@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Select Your Subject</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <title>Intermediate Level</title>
+  <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -17,10 +17,10 @@
     <span></span>
   </div>
   <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="quiz.html">Quiz</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="../index.html" class="active">Home</a></li>
+    <li><a href="../level.html">Quiz</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html">Contact</a></li>
     <div class="lang-segment">
   <button id="lang-fr" class="lang-btn">FR</button>
   <button id="lang-en" class="lang-btn">EN</button>
@@ -58,11 +58,12 @@
     document.querySelectorAll('.card').forEach(card => {
       card.addEventListener('click', () => {
         const subject = card.dataset.subject;
-        window.location.href = `game.html?subject=${subject}`;
+        window.location.href = `../games/lv2.html?subject=${subject}`;
       });
     });
   </script>
-<script src="js/main.js"></script>
-<script src="js/translate.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/translate.js"></script>
+<script src="../js/data2.js"></script>
 </body>
 </html>

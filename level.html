@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQ Clash - Select Level</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+      <nav>
+  <div class="logo">IQ Clash</div>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="level.html">Quiz</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <div class="lang-segment">
+  <button id="lang-fr" class="lang-btn">FR</button>
+  <button id="lang-en" class="lang-btn">EN</button>
+</div>
+  </ul>
+</nav>
+
+   <section class="subjects" id="levels">
+        <h1>Choose Your Level</h1>
+        <div class="subject-grid">
+            <div class="card beginner" onclick="selectLevel('levels/beginner.html')">
+                <i class="fas fa-seedling"></i>
+                <h3>Beginner</h3>
+                <p>Start with easy questions to build your confidence.</p>
+            </div>
+            <div class="card intermediate" onclick="selectLevel('levels/intermediate.html')">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Intermediate</h3>
+                <p>Moderate challenges for those ready to step up.</p>
+            </div>
+            <div class="card normal" onclick="selectLevel('levels/normal.html')">
+                <i class="fas fa-brain"></i>
+                <h3>Normal</h3>
+                <p>A balanced test of your cognitive abilities.</p>
+            </div>
+            <div class="card hard" onclick="selectLevel('levels/hard.html')">
+                <i class="fas fa-fire"></i>
+                <h3>Hard</h3>
+                <p>Tough puzzles to push your mental limits.</p>
+            </div>
+            <div class="card very-hard" onclick="selectLevel('levels/very-hard.html')">
+                <i class="fas fa-rocket"></i>
+                <h3>Very Hard</h3>
+                <p>Complex questions for advanced thinkers.</p>
+            </div>
+            <div class="card legend" onclick="selectLevel('levels/legend.html')">
+                <i class="fas fa-crown"></i>
+                <h3>Legend</h3>
+                <p>The ultimate IQ challenge for true masters.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+    <div class="socials">
+      <a href="https://facebook.com/richardlegeek"><i class="fab fa-facebook"></i></a>
+      <a href="https://x.com/rizinkovic"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://github.com/rizinkovic"><i class="fab fa-github"></i></a>
+    </div>
+    <p>Disclaimer: This is an IQ test for learning purpose only. &copy; 2025 IQ Clash</p>
+  </footer>
+
+  <script>
+    function selectLevel(path) {
+            try {
+                window.location.href = path;
+            } catch (error) {
+                console.error('Navigation failed:', error);
+                alert('Error: Could not navigate to the selected level. Please check if the file exists.');
+            }
+        }
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Legend Level</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <nav>
+  <div class="logo">IQ Clash</div>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="../index.html" class="active">Home</a></li>
+    <li><a href="../level.html">Quiz</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+    <div class="lang-segment">
+  <button id="lang-fr" class="lang-btn">FR</button>
+  <button id="lang-en" class="lang-btn">EN</button>
+</div>
+
+  </ul>
+</nav>
+
+  <section class="subjects">
+    <h1>Choose Your Challenge</h1>
+    <div class="subject-grid">
+      <div class="card" data-subject="Mathematics"><i class="fas fa-square-root-alt"></i> Mathematics</div>
+      <div class="card" data-subject="HumanBiology"><i class="fas fa-dna"></i> Human Biology</div>
+      <div class="card" data-subject="History"><i class="fas fa-landmark"></i> History</div>
+      <div class="card" data-subject="Geography"><i class="fas fa-globe"></i> Geography</div>
+      <div class="card" data-subject="ComputerScience"><i class="fas fa-laptop-code"></i> Computer Science</div>
+      <div class="card" data-subject="Finance"><i class="fas fa-coins"></i> Finance</div>
+      <div class="card" data-subject="Chemistry"><i class="fas fa-vial"></i> Chemistry</div>
+      <div class="card" data-subject="Logic"><i class="fas fa-brain"></i> Logic</div>
+      <div class="card" data-subject="English"><i class="fas fa-book"></i> English</div>
+      <div class="card" data-subject="GeneralKnowledge"><i class="fas fa-lightbulb"></i> General Knowledge</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="socials">
+      <a href="https://facebook.com/richardlegeek"><i class="fab fa-facebook"></i></a>
+      <a href="https://x.com/rizinkovic"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://github.com/rizinkovic"><i class="fab fa-github"></i></a>
+    </div>
+    <p>&copy; 2025 IQ Clash</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        const subject = card.dataset.subject;
+        window.location.href = `../games/lv6.html?subject=${subject}`;
+      });
+    });
+  </script>
+<script src="../js/main.js"></script>
+<script src="../js/translate.js"></script>
+<script src="../js/data6.js"></script>
+</body>
+</html>

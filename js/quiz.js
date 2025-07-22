@@ -150,7 +150,7 @@ function checkAnswer(opt) {
     
     return; // Prevent the setTimeout below from running
   }
-  setTimeout(nextQuestion, 1500); // Advance to next question after 1.5 seconds for correct answers
+  setTimeout(nextQuestion, 1000); // Advance to next question after 1.5 seconds for correct answers
 }
 
 function nextQuestion() {

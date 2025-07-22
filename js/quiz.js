@@ -88,9 +88,69 @@ function checkAnswer(opt) {
     document.getElementById('result').innerHTML = '<span style="color: green;">YOU GOT THE CORRECT ANSWER</span>';
   } else {
     document.getElementById('result').innerHTML = '<span style="color: red;">YOU HAVE FAILED</span>';
-    alert(`Incorrect! The correct answer is: ${qData[current].answer}`);
+    
+    // Create styled window
+    const resultWindow = document.createElement('div');
+    resultWindow.style.position = 'fixed';
+    resultWindow.style.top = '50%';
+    resultWindow.style.left = '50%';
+    resultWindow.style.transform = 'translate(-50%, -50%)';
+    resultWindow.style.backgroundColor = '#fff';
+    resultWindow.style.padding = '20px';
+    resultWindow.style.borderRadius = '8px';
+    resultWindow.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+    resultWindow.style.zIndex = '1000';
+    resultWindow.style.textAlign = 'center';
+    resultWindow.style.maxWidth = '400px';
+    
+    // Add content
+    const message = document.createElement('p');
+    message.textContent = `Incorrect! The correct answer is: ${qData[current].answer}`;
+    message.style.color = '#333';
+    message.style.marginBottom = '20px';
+    
+    // Add close button
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'OK';
+    closeButton.style.padding = '8px 16px';
+    closeButton.style.backgroundColor = '#4CAF50';
+    closeButton.style.color = 'white';
+    closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '4px';
+    closeButton.style.cursor = 'pointer';
+    
+    // Close button event
+    closeButton.onclick = () => {
+      document.body.removeChild(resultWindow);
+      nextQuestion();
+    };
+    
+    // Append elements
+    resultWindow.appendChild(message);
+    resultWindow.appendChild(closeButton);
+    document.body.appendChild(resultWindow);
+    
+    // Optional: Add overlay
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+    overlay.style.zIndex = '999';
+    document.body.appendChild(overlay);
+    
+    // Remove overlay when window closes
+    closeButton.onclick = () => {
+      document.body.removeChild(resultWindow);
+      document.body.removeChild(overlay);
+      nextQuestion();
+    };
+    
+    return; // Prevent the setTimeout below from running
   }
-  setTimeout(nextQuestion, 1500); // Advance to next question after 1 second
+  setTimeout(nextQuestion, 1500); // Advance to next question after 1.5 seconds for correct answers
 }
 
 function nextQuestion() {

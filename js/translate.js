@@ -108,19 +108,36 @@ const translations = {
   }
 };
 
+
 function translatePage(lang) {
-  document.querySelectorAll("[data-translate]").forEach(element => {
-    const key = element.getAttribute("data-original-text") || element.textContent.trim();
-    element.setAttribute("data-original-text", key); // Store original
-    element.textContent = translations[lang][key] || key;
-  });
+    if (!translations[lang]) return;
+
+    document.querySelectorAll("[data-translate]").forEach(element => {
+        // Use a data attribute to store the key so we don't lose the original meaning
+        let key = element.getAttribute("data-original-key");
+        
+        if (!key) {
+            key = element.textContent.trim();
+            element.setAttribute("data-original-key", key);
+        }
+
+        if (translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
 }
+
+// Handle initial load translation
+document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("selectedLanguage") || "en";
+    translatePage(savedLang);
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const currentLang = localStorage.getItem("selectedLanguage") || "en";
   translatePage(currentLang);
 
-  // If you have buttons with IDs
+ 
   const btnFr = document.getElementById("lang-fr");
   const btnEn = document.getElementById("lang-en");
 
